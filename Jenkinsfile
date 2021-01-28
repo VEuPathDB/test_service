@@ -8,7 +8,8 @@ node('centos8') {
 sh "env"
 
 def builder = new Builder(this)
-builder.gitClone(['https://github.com/VEuPathDB/test_service.git': env.BRANCH_NAME])
+checkout scm
+#builder.gitClone(['https://github.com/VEuPathDB/test_service.git': env.BRANCH_NAME])
 builder.buildContainers([[name: 'test_service', path: '.']])
 
 }
