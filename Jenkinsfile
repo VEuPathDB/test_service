@@ -1,6 +1,6 @@
 #!groovy
 
-@Library('pipelib@github-creds')
+@Library('pipelib@scm-info')
 import org.veupathdb.lib.Builder
 
 node('centos8') {
