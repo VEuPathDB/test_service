@@ -7,9 +7,9 @@ node('centos8') {
 
 sh "env"
 
-checkout scm
-
 def builder = new Builder(this)
+
+builder.gitClone()
 builder.buildContainers([[name: 'test_service']])
 
 }
