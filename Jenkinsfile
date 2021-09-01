@@ -1,6 +1,6 @@
 #!groovy
 
-@Library('pipelib@scm-info-2')
+@Library('pipelib@scm-info')
 import org.veupathdb.lib.Project
 
 node('centos8') {
