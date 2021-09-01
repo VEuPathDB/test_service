@@ -1,17 +1,15 @@
 #!groovy
 
 @Library('pipelib@scm-info')
-import org.veupathdb.lib.Project
+import org.veupathdb.lib.Builder
 
 node('centos8') {
 
-  sh "env"
+sh "env"
 
-  Project.build(this) {
+def builder = new Builder(this)
 
-    component {
+builder.gitClone()
+builder.buildContainers([[name: 'test_service']])
 
-      docker 'test_service'
-    }
-  }
 }
