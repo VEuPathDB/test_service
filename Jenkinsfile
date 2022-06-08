@@ -3,7 +3,7 @@
 @Library('pipelib')
 import org.veupathdb.lib.Builder
 
-node('centos8') {
+node('rocky8') {
 
 sh "env"
 
